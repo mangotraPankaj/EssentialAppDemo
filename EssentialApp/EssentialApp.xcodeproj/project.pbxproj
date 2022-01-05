@@ -104,7 +104,6 @@
 			children = (
 				CD4E95B027799703000632B5 /* EssentialApp */,
 				CD4E95C727799709000632B5 /* EssentialAppTests */,
-				CD4E96002779A841000632B5 /* EssentialAppTests */,
 				CD4E95AF27799703000632B5 /* Products */,
 				CD4E95E127799924000632B5 /* Frameworks */,
 			);
@@ -152,13 +151,6 @@
 				CD4E95E327799924000632B5 /* EssentialFeediOS.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CD4E96002779A841000632B5 /* EssentialAppTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EssentialAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
