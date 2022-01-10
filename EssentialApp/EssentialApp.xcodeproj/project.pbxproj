@@ -27,6 +27,7 @@
 		CD4E96082779A8FE000632B5 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4E95F92779A75B000632B5 /* FeedLoaderWithFallbackCompositeTests.swift */; };
 		CD66FA2C278C0EBE004D23AC /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66FA2B278C0EBE004D23AC /* FeedLoaderStub.swift */; };
 		CD66FA2E278C121F004D23AC /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66FA2D278C121F004D23AC /* XCTestCase+FeedLoader.swift */; };
+		CD66FA34278C2667004D23AC /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66FA33278C2667004D23AC /* FeedLoaderCacheDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		CD4E95FF2779A841000632B5 /* EssentialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD66FA2B278C0EBE004D23AC /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 		CD66FA2D278C121F004D23AC /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
+		CD66FA33278C2667004D23AC /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 		F01648EA8044768D9D719B81 /* Pods-EssentialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EssentialApp.debug.xcconfig"; path = "Target Support Files/Pods-EssentialApp/Pods-EssentialApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				CD4E95B527799703000632B5 /* ViewController.swift */,
 				CD120EAD27831441006AE564 /* FeedLoaderWithFallbackComposite.swift */,
 				CD120EB127842015006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift */,
+				CD66FA33278C2667004D23AC /* FeedLoaderCacheDecorator.swift */,
 				CD4E95B727799703000632B5 /* Main.storyboard */,
 				CD4E95BA27799708000632B5 /* Assets.xcassets */,
 				CD4E95BC27799708000632B5 /* LaunchScreen.storyboard */,
@@ -328,6 +331,7 @@
 				CD4E95B627799703000632B5 /* ViewController.swift in Sources */,
 				CD4E95B227799703000632B5 /* AppDelegate.swift in Sources */,
 				CD120EAE27831441006AE564 /* FeedLoaderWithFallbackComposite.swift in Sources */,
+				CD66FA34278C2667004D23AC /* FeedLoaderCacheDecorator.swift in Sources */,
 				CD4E95B427799703000632B5 /* SceneDelegate.swift in Sources */,
 				CD120EB227842015006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 			);
