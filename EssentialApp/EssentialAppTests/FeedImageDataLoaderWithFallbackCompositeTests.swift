@@ -9,7 +9,7 @@ import EDNLearnMac
 import EssentialApp
 import XCTest
 
-class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
+class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase, FeedImageDataLoaderTestCase {
     func test_init_doesNotLoadImageData() {
         let (_, primaryLoader, fallbackLoader) = makeSUT()
         XCTAssertTrue(primaryLoader.loadedURLs.isEmpty, "Expected no loaded url in the primary loader")
@@ -87,26 +87,6 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
     }
 
     // MARK: - Helpers
-
-    private func expect(_ sut: FeedImageDataLoader, toCompleteWith expectedResult: FeedImageDataLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
-        let exp = expectation(description: "Wait for load completion")
-
-        _ = sut.loadImageData(from: anyURL()) { recievedResult in
-            switch (recievedResult, expectedResult) {
-            case let (.success(recievedFeed), .success(expectedFeed)):
-                XCTAssertEqual(recievedFeed, expectedFeed, file: file, line: line)
-
-            case (.failure, .failure):
-                break
-
-            default:
-                XCTFail("Expected \(expectedResult), Got: \(recievedResult) instead", file: file, line: line)
-            }
-            exp.fulfill()
-        }
-        action()
-        wait(for: [exp], timeout: 1)
-    }
 
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedImageDataLoader, primary: FeedImageDataLoaderSpy, fallback: FeedImageDataLoaderSpy) {
         let primaryLoader = FeedImageDataLoaderSpy()
