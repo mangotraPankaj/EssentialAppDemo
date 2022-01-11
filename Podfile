@@ -8,7 +8,6 @@ project 'EssentialApp/EssentialApp.xcodeproj'
 project 'EssentialFeed/EssentialFeed.xcodeproj'
 
 def ui_pods
-pod 'SwiftFormat/CLI', '~> 0.49'
 end
 
 target 'EssentialApp' do
