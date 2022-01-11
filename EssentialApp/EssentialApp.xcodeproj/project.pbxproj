@@ -168,8 +168,8 @@
 			children = (
 				CD120EB3278420E0006AE564 /* Helpers */,
 				CD4E95F92779A75B000632B5 /* FeedLoaderWithFallbackCompositeTests.swift */,
-				CD120EE827857917006AE564 /* FeedLoaderCacheDecoratorTests.swift */,
 				CD120EAF278315E2006AE564 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
+				CD120EE827857917006AE564 /* FeedLoaderCacheDecoratorTests.swift */,
 				CD66FA35278D50F0004D23AC /* FeedImageDataLoaderCacheDecoratorTests.swift */,
 			);
 			path = EssentialAppTests;
