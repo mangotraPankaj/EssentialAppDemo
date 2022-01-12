@@ -17,7 +17,7 @@
                BlueprintIdentifier = "CD10FCA1266C90CB00A84E66"
                BuildableName = "EDNLearnMac.framework"
                BlueprintName = "EDNLearnMac"
-               ReferencedContainer = "container:EDNLearn.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "CD6907232685AA9E001E9E4D"
                BuildableName = "EDNLearnAPIEndToEndTests.xctest"
                BlueprintName = "EDNLearnAPIEndToEndTests"
-               ReferencedContainer = "container:EDNLearn.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "CD10FCA9266C90CC00A84E66"
                BuildableName = "EDNLearnMacTests.xctest"
                BlueprintName = "EDNLearnMacTests"
-               ReferencedContainer = "container:EDNLearn.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -59,7 +59,7 @@
                BlueprintIdentifier = "CD0FCF3A26D7787000398364"
                BuildableName = "EDNLearnCacheIntegrationTests.xctest"
                BlueprintName = "EDNLearnCacheIntegrationTests"
-               ReferencedContainer = "container:EDNLearn.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -77,21 +77,21 @@
             BlueprintIdentifier = "CD10FCA1266C90CB00A84E66"
             BuildableName = "EDNLearnMac.framework"
             BlueprintName = "EDNLearnMac"
-            ReferencedContainer = "container:EDNLearn.xcodeproj">
+            ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD0FCF3A26D7787000398364"
             BuildableName = "EDNLearnCacheIntegrationTests.xctest"
             BlueprintName = "EDNLearnCacheIntegrationTests"
-            ReferencedContainer = "container:EDNLearn.xcodeproj">
+            ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD6907232685AA9E001E9E4D"
             BuildableName = "EDNLearnAPIEndToEndTests.xctest"
             BlueprintName = "EDNLearnAPIEndToEndTests"
-            ReferencedContainer = "container:EDNLearn.xcodeproj">
+            ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -104,7 +104,7 @@
                BlueprintIdentifier = "CD10FCA9266C90CC00A84E66"
                BuildableName = "EDNLearnMacTests.xctest"
                BlueprintName = "EDNLearnMacTests"
-               ReferencedContainer = "container:EDNLearn.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
             </BuildableReference>
             <LocationScenarioReference
                identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
@@ -120,7 +120,7 @@
                BlueprintIdentifier = "CD6907232685AA9E001E9E4D"
                BuildableName = "EDNLearnAPIEndToEndTests.xctest"
                BlueprintName = "EDNLearnAPIEndToEndTests"
-               ReferencedContainer = "container:EDNLearn.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -132,7 +132,7 @@
                BlueprintIdentifier = "CD0FCF3A26D7787000398364"
                BuildableName = "EDNLearnCacheIntegrationTests.xctest"
                BlueprintName = "EDNLearnCacheIntegrationTests"
-               ReferencedContainer = "container:EDNLearn.xcodeproj">
+               ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -160,7 +160,7 @@
             BlueprintIdentifier = "CD10FCA1266C90CB00A84E66"
             BuildableName = "EDNLearnMac.framework"
             BlueprintName = "EDNLearnMac"
-            ReferencedContainer = "container:EDNLearn.xcodeproj">
+            ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
