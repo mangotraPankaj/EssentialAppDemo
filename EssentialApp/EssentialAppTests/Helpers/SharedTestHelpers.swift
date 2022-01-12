@@ -5,6 +5,7 @@
 //  Created by Pankaj Mangotra on 04/01/22.
 //
 
+import EDNLearnMac
 import Foundation
 
 func anyNSError() -> Error {
@@ -17,4 +18,8 @@ func anyURL() -> URL {
 
 func anyData() -> Data {
     return Data("anydata".utf8)
+}
+
+func uniqueFeed() -> [FeedImage] {
+    return [FeedImage(id: UUID(), description: "any", location: "any", url: anyURL())]
 }
