@@ -30,9 +30,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
         let localImageLoader = LocalFeedImageDataLoader(store: localStore)
 
-        if CommandLine.arguments.contains("-reset") {
-            try? FileManager.default.removeItem(at: localStoreURL)
-        }
+        #if DEBUG
+            if CommandLine.arguments.contains("-reset") {
+                try? FileManager.default.removeItem(at: localStoreURL)
+            }
+        #endif
 
         window?.rootViewController = FeedUIComposer.feedComposedWith(
             feedLoader: FeedLoaderWithFallbackComposite(
@@ -53,24 +55,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func makeRemoteClient() -> HTTPClient {
-        switch UserDefaults.standard.string(forKey: "connectivity") {
-        case "offline":
-            return AlwaysFailingHTTP()
-        default:
-            return URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
+        #if DEBUG
+            if UserDefaults.standard.string(forKey: "connectivity") == "offline" {
+                return AlwaysFailingHTTP()
+            }
+        #endif
+        return URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
+    }
+}
+
+#if DEBUG
+    private class AlwaysFailingHTTP: HTTPClient {
+        private class Task: HTTPClientTask {
+            func cancel() {}
+        }
+
+        func post(_: Data, to _: URL, completion _: @escaping (HTTPClient.Result) -> Void) {}
+
+        func get(from _: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+            completion(.failure(NSError(domain: "offline", code: 0)))
+            return Task()
         }
     }
-}
-
-private class AlwaysFailingHTTP: HTTPClient {
-    private class Task: HTTPClientTask {
-        func cancel() {}
-    }
-
-    func post(_: Data, to _: URL, completion _: @escaping (HTTPClient.Result) -> Void) {}
-
-    func get(from _: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        completion(.failure(NSError(domain: "offline", code: 0)))
-        return Task()
-    }
-}
+#endif
