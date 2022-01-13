@@ -33,6 +33,7 @@
 		CD8A7511278D676D00AE2529 /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A7510278D676D00AE2529 /* XCTestCase+FeedImageDataLoader.swift */; };
 		CD8A7513278D686100AE2529 /* FeedImageDataLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A7512278D686100AE2529 /* FeedImageDataLoaderCacheDecorator.swift */; };
 		CD8A751F278EB99600AE2529 /* EssentialAppUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A751E278EB99600AE2529 /* EssentialAppUIAcceptanceTests.swift */; };
+		CD8A752A278FF72200AE2529 /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A7529278FF72200AE2529 /* DebuggingSceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		CD8A7512278D686100AE2529 /* FeedImageDataLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 		CD8A751C278EB99600AE2529 /* EssentialAppUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8A751E278EB99600AE2529 /* EssentialAppUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppUIAcceptanceTests.swift; sourceTree = "<group>"; };
+		CD8A7529278FF72200AE2529 /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
 		F01648EA8044768D9D719B81 /* Pods-EssentialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EssentialApp.debug.xcconfig"; path = "Target Support Files/Pods-EssentialApp/Pods-EssentialApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 			children = (
 				CD4E95B127799703000632B5 /* AppDelegate.swift */,
 				CD4E95B327799703000632B5 /* SceneDelegate.swift */,
+				CD8A7529278FF72200AE2529 /* DebuggingSceneDelegate.swift */,
 				CD4E95B527799703000632B5 /* ViewController.swift */,
 				CD120EAD27831441006AE564 /* FeedLoaderWithFallbackComposite.swift */,
 				CD120EB127842015006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift */,
@@ -401,6 +404,7 @@
 				CD4E95B227799703000632B5 /* AppDelegate.swift in Sources */,
 				CD120EAE27831441006AE564 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				CD66FA34278C2667004D23AC /* FeedLoaderCacheDecorator.swift in Sources */,
+				CD8A752A278FF72200AE2529 /* DebuggingSceneDelegate.swift in Sources */,
 				CD4E95B427799703000632B5 /* SceneDelegate.swift in Sources */,
 				CD120EB227842015006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 				CD8A7513278D686100AE2529 /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
