@@ -704,6 +704,7 @@
 		CD8A7524278EB99600AE2529 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NT7V746EDB;
@@ -722,6 +723,7 @@
 		CD8A7525278EB99600AE2529 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NT7V746EDB;
@@ -747,7 +749,7 @@
 				CD4E95D727799709000632B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		CD4E95D827799709000632B5 /* Build configuration list for PBXNativeTarget "EssentialApp" */ = {
 			isa = XCConfigurationList;
@@ -756,7 +758,7 @@
 				CD4E95DA27799709000632B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		CD4E96052779A842000632B5 /* Build configuration list for PBXNativeTarget "EssentialAppTests" */ = {
 			isa = XCConfigurationList;
@@ -765,7 +767,7 @@
 				CD4E96072779A842000632B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		CD8A7526278EB99600AE2529 /* Build configuration list for PBXNativeTarget "EssentialAppUIAcceptanceTests" */ = {
 			isa = XCConfigurationList;
@@ -774,7 +776,7 @@
 				CD8A7525278EB99600AE2529 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

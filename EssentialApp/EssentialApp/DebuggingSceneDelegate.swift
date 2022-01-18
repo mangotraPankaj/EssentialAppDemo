@@ -5,15 +5,12 @@
 //  Created by Pankaj Mangotra on 13/01/22.
 //
 
-import EDNLearnMac
-import UIKit
-
 #if DEBUG
+    import EDNLearnMac
+    import UIKit
+
     class DebuggingSceneDelegate: SceneDelegate {
         override func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-            // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-            // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-            // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
             guard let _ = (scene as? UIWindowScene) else { return }
 
             if CommandLine.arguments.contains("-reset") {
@@ -23,24 +20,67 @@ import UIKit
         }
 
         override func makeRemoteClient() -> HTTPClient {
-            if UserDefaults.standard.string(forKey: "connectivity") == "offline" {
-                return AlwaysFailingHTTPClient()
+            if let connectivity = UserDefaults.standard.string(forKey: "connectivity") {
+                return DebuggingHTTPClient(connectivity: connectivity)
             }
-
-            return URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
+            return super.makeRemoteClient()
         }
     }
 
-    private class AlwaysFailingHTTPClient: HTTPClient {
+    private class DebuggingHTTPClient: HTTPClient {
+        private let connectivity: String
+
+        init(connectivity: String) {
+            self.connectivity = connectivity
+        }
+
         private class Task: HTTPClientTask {
             func cancel() {}
         }
 
         func post(_: Data, to _: URL, completion _: @escaping (HTTPClient.Result) -> Void) {}
 
-        func get(from _: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-            completion(.failure(NSError(domain: "offline", code: 0)))
+        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+            switch connectivity {
+            case "online":
+                completion(.success(makeSuccessfulResponse(for: url)))
+            default:
+                completion(.failure(NSError(domain: "offline", code: 0)))
+            }
+
             return Task()
+        }
+
+        private func makeSuccessfulResponse(for url: URL) -> (Data, HTTPURLResponse) {
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            return (makeData(for: url), response)
+        }
+
+        private func makeData(for url: URL) -> Data {
+            switch url.absoluteString {
+            case "http://image.com":
+                return makeImageData()
+            default:
+                return makeFeedData()
+            }
+        }
+
+        private func makeImageData() -> Data {
+            let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+            UIGraphicsBeginImageContext(rect.size)
+            let context = UIGraphicsGetCurrentContext()!
+            context.setFillColor(UIColor.blue.cgColor)
+            context.fill(rect)
+            let img = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return img!.pngData()!
+        }
+
+        private func makeFeedData() -> Data {
+            return try! JSONSerialization.data(withJSONObject: ["items": [
+                ["id": UUID().uuidString, "image": "http://image.com"],
+                ["id": UUID().uuidString, "image": "http://image.com"],
+            ]])
         }
     }
 #endif
