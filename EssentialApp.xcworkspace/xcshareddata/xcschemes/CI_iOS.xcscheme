@@ -62,6 +62,20 @@
                ReferencedContainer = "container:EssentialFeed/EDNLearn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD8A751B278EB99600AE2529"
+               BuildableName = "EssentialAppUIAcceptanceTests.xctest"
+               BlueprintName = "EssentialAppUIAcceptanceTests"
+               ReferencedContainer = "container:EssentialApp/EssentialApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -156,6 +170,28 @@
                BlueprintIdentifier = "CD4E95FE2779A841000632B5"
                BuildableName = "EssentialAppTests.xctest"
                BlueprintName = "EssentialAppTests"
+               ReferencedContainer = "container:EssentialApp/EssentialApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD8A751B278EB99600AE2529"
+               BuildableName = "EssentialAppUIAcceptanceTests.xctest"
+               BlueprintName = "EssentialAppUIAcceptanceTests"
+               ReferencedContainer = "container:EssentialApp/EssentialApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CDF5E1B82796963200F45BAF"
+               BuildableName = "EssentialAppUIAcceptanceTest.xctest"
+               BlueprintName = "EssentialAppUIAcceptanceTest"
                ReferencedContainer = "container:EssentialApp/EssentialApp.xcodeproj">
             </BuildableReference>
          </TestableReference>

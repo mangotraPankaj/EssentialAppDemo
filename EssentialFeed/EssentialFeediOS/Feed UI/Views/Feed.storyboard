@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cwF-F8-nmq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cwF-F8-nmq">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="iz1-L7-3te" customClass="ErrorView" customModule="MVC" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="iz1-L7-3te" customClass="ErrorView" customModule="EssentialFeediOS" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="428" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -95,6 +95,7 @@ Location</string>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TgO-lt-QbS">
                                                             <rect key="frame" x="0.0" y="0.0" width="388" height="388"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="feed-image-view"/>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aii-fe-6ya">
                                                             <rect key="frame" x="0.0" y="0.0" width="388" height="388"/>
@@ -147,6 +148,7 @@ Location</string>
                                         <constraint firstItem="lHH-oc-ZoV" firstAttribute="leading" secondItem="AtL-lF-QOq" secondAttribute="leadingMargin" id="j6C-F8-tfU"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="feed-image-cell"/>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="mem-ct-Ctp" id="e9z-i3-HTV"/>
                                     <outlet property="feedImageContainer" destination="9RF-lU-Z0w" id="7po-xs-wUu"/>
