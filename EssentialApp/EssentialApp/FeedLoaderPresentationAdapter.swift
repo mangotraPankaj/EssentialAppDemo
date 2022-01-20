@@ -6,6 +6,7 @@
 //
 
 import EDNLearnMac
+import EssentialFeediOS
 import Foundation
 
 final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
