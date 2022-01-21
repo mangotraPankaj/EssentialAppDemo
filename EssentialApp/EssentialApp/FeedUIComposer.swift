@@ -6,7 +6,7 @@
 //
 
 import EDNLearnMac
-import Foundation
+import EssentialFeediOS
 import UIKit
 
 public final class FeedUIComposer {

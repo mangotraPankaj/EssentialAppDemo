@@ -6,8 +6,8 @@
 //
 
 import EDNLearnMac
+import EssentialApp
 import EssentialFeediOS
-import UIKit
 import XCTest
 
 final class FeedUIIntegrationTests: XCTestCase {
