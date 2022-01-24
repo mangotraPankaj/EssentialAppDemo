@@ -84,6 +84,7 @@
 		CD6B8D962771B016009B9C62 /* CoreDataFeedStore+FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B8D952771B016009B9C62 /* CoreDataFeedStore+FeedStore.swift */; };
 		CD6B8D972771B016009B9C62 /* CoreDataFeedStore+FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B8D952771B016009B9C62 /* CoreDataFeedStore+FeedStore.swift */; };
 		CD72558126E8977E00C5CD3E /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD72557826E8977E00C5CD3E /* EssentialFeediOS.framework */; };
+		CD734265279E78150012DE5D /* FeedSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD734264279E78150012DE5D /* FeedSnapshotTests.swift */; };
 		CD758DF1274F65C1005026DC /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD758DF0274F65C1005026DC /* FeedPresenter.swift */; };
 		CD758DF2274F6776005026DC /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD758DF0274F65C1005026DC /* FeedPresenter.swift */; };
 		CD758DF3274F67BF005026DC /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD758DEC274F6126005026DC /* Feed.strings */; };
@@ -241,6 +242,7 @@
 		CD72557B26E8977E00C5CD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD72558026E8977E00C5CD3E /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD72558726E8977E00C5CD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD734264279E78150012DE5D /* FeedSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSnapshotTests.swift; sourceTree = "<group>"; };
 		CD758DEB274F6126005026DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		CD758DED274F6128005026DC /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		CD758DEE274F6129005026DC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
@@ -567,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				CD72558726E8977E00C5CD3E /* Info.plist */,
+				CD734264279E78150012DE5D /* FeedSnapshotTests.swift */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
@@ -1066,6 +1069,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD286FEA26EF26DF0070022B /* XCTestCase+MemoryLeakTracker.swift in Sources */,
+				CD734265279E78150012DE5D /* FeedSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
