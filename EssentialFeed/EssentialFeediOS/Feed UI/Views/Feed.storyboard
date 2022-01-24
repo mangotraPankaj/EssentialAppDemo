@@ -20,28 +20,23 @@
                             <rect key="frame" x="0.0" y="0.0" width="428" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jj-fN-DiN">
-                                    <rect key="frame" x="0.0" y="0.0" width="428" height="34"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miD-pE-Atu">
+                                    <rect key="frame" x="8" y="8" width="412" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
-                                    <state key="normal" title="Error label">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="hideMessage" destination="iz1-L7-3te" eventType="touchUpInside" id="2J2-Z3-igw"/>
-                                    </connections>
-                                </button>
+                                    <color key="textColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.99951404330000004" green="0.41759261489999999" blue="0.4154433012" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <gestureRecognizers/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="7jj-fN-DiN" secondAttribute="trailing" id="BQc-Z8-anU"/>
-                                <constraint firstItem="7jj-fN-DiN" firstAttribute="leading" secondItem="iz1-L7-3te" secondAttribute="leading" id="ZMq-4u-Cyv"/>
-                                <constraint firstAttribute="bottom" secondItem="7jj-fN-DiN" secondAttribute="bottom" id="e7M-45-qNB"/>
-                                <constraint firstItem="7jj-fN-DiN" firstAttribute="top" secondItem="iz1-L7-3te" secondAttribute="top" id="qJb-nx-zcr"/>
+                                <constraint firstItem="miD-pE-Atu" firstAttribute="leading" secondItem="iz1-L7-3te" secondAttribute="leadingMargin" id="B5r-um-hzT"/>
+                                <constraint firstItem="miD-pE-Atu" firstAttribute="top" secondItem="iz1-L7-3te" secondAttribute="topMargin" id="YcK-1L-F2F"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="miD-pE-Atu" secondAttribute="bottom" id="hji-a2-8Hh"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="miD-pE-Atu" secondAttribute="trailing" id="ndu-X5-FsJ"/>
                             </constraints>
                             <connections>
-                                <outlet property="button" destination="7jj-fN-DiN" id="BvG-cC-Nlg"/>
+                                <outlet property="errorLabel" destination="miD-pE-Atu" id="sOB-qJ-XYa"/>
                             </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="6oH-DJ-akt">
@@ -179,7 +174,7 @@ Location</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCk-Tx-fPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2636.231884057971" y="-360.26785714285711"/>
+            <point key="canvasLocation" x="2635.5140186915887" y="-360.90712742980566"/>
         </scene>
     </scenes>
     <resources>

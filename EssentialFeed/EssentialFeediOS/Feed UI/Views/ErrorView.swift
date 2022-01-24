@@ -8,9 +8,9 @@
 import UIKit
 
 public final class ErrorView: UIView {
-    @IBOutlet public private(set) var button: UIButton!
+    @IBOutlet public private(set) var errorLabel: UILabel!
 
-    public var message: String? { return isVisible ? button.title(for: .normal) : nil }
+    public var message: String? { return isVisible ? errorLabel.text : nil }
 
     private var isVisible: Bool {
         return alpha > 0
@@ -19,12 +19,14 @@ public final class ErrorView: UIView {
     override public func awakeFromNib() {
         super.awakeFromNib()
 
-        button.setTitle(nil, for: .normal)
+        errorLabel.text = nil
+
         alpha = 0
     }
 
     func show(message: String) {
-        button.setTitle(message, for: .normal)
+        errorLabel.text = message
+        // button.setTitle(message, for: .normal)
 
         UIView.animate(withDuration: 0.25) {
             self.alpha = 1
@@ -37,7 +39,7 @@ public final class ErrorView: UIView {
             animations: { self.alpha = 0 },
             completion: { completed in
                 if completed {
-                    self.button.setTitle(nil, for: .normal)
+                    self.errorLabel.text = nil
                 }
             }
         )
