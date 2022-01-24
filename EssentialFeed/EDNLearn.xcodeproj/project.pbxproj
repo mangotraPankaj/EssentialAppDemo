@@ -85,6 +85,7 @@
 		CD6B8D972771B016009B9C62 /* CoreDataFeedStore+FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B8D952771B016009B9C62 /* CoreDataFeedStore+FeedStore.swift */; };
 		CD72558126E8977E00C5CD3E /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD72557826E8977E00C5CD3E /* EssentialFeediOS.framework */; };
 		CD734265279E78150012DE5D /* FeedSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD734264279E78150012DE5D /* FeedSnapshotTests.swift */; };
+		CD734269279E817C0012DE5D /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD734268279E817C0012DE5D /* UIImage+TestHelpers.swift */; };
 		CD758DF1274F65C1005026DC /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD758DF0274F65C1005026DC /* FeedPresenter.swift */; };
 		CD758DF2274F6776005026DC /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD758DF0274F65C1005026DC /* FeedPresenter.swift */; };
 		CD758DF3274F67BF005026DC /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD758DEC274F6126005026DC /* Feed.strings */; };
@@ -243,6 +244,7 @@
 		CD72558026E8977E00C5CD3E /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD72558726E8977E00C5CD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD734264279E78150012DE5D /* FeedSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSnapshotTests.swift; sourceTree = "<group>"; };
+		CD734268279E817C0012DE5D /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		CD758DEB274F6126005026DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		CD758DED274F6128005026DC /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		CD758DEE274F6129005026DC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
@@ -568,10 +570,19 @@
 		CD72558426E8977E00C5CD3E /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD734267279E816C0012DE5D /* Helpers */,
 				CD72558726E8977E00C5CD3E /* Info.plist */,
 				CD734264279E78150012DE5D /* FeedSnapshotTests.swift */,
 			);
 			path = EssentialFeediOSTests;
+			sourceTree = "<group>";
+		};
+		CD734267279E816C0012DE5D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD734268279E817C0012DE5D /* UIImage+TestHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CD758DEF274F6591005026DC /* Feed Presentation */ = {
@@ -769,6 +780,7 @@
 				CD72557526E8977E00C5CD3E /* Frameworks */,
 				CD72557626E8977E00C5CD3E /* Resources */,
 				CD286FE926EF25330070022B /* Embed Frameworks */,
+				CD734266279E808C0012DE5D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -916,6 +928,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CD734266279E808C0012DE5D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CD0FCF3726D7787000398364 /* Sources */ = {
@@ -1070,6 +1102,7 @@
 			files = (
 				CD286FEA26EF26DF0070022B /* XCTestCase+MemoryLeakTracker.swift in Sources */,
 				CD734265279E78150012DE5D /* FeedSnapshotTests.swift in Sources */,
+				CD734269279E817C0012DE5D /* UIImage+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
