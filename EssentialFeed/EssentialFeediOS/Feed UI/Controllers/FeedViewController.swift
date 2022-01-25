@@ -8,7 +8,7 @@
 import EDNLearnMac
 import UIKit
 
- public protocol FeedViewControllerDelegate {
+public protocol FeedViewControllerDelegate {
     func didRequestFeedRefresh()
 }
 
@@ -23,9 +23,9 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
         }
     }
 
-   public var delegate: FeedViewControllerDelegate?
+    public var delegate: FeedViewControllerDelegate?
 
-   private var tableModel = [FeedImageCellController]() {
+    private var tableModel = [FeedImageCellController]() {
         didSet {
             tableView.reloadData()
         }
@@ -38,10 +38,15 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
         refresh()
     }
 
+    override public func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.sizeTableHeaderToFit()
+    }
+
     @IBAction private func refresh() {
         delegate?.didRequestFeedRefresh()
     }
-    
+
     public func display(_ cellControllers: [FeedImageCellController]) {
         tableModel = cellControllers
     }

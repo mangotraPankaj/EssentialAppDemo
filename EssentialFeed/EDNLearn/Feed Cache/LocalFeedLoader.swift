@@ -29,7 +29,7 @@ extension LocalFeedLoader: FeedCache {
                 self.cache(feed, with: completion)
 
             case let .failure(error):
-                    completion(.failure(error))
+                completion(.failure(error))
             }
         }
     }
