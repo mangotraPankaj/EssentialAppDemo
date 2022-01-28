@@ -11,6 +11,15 @@ import XCTest
 
 extension FeedUIIntegrationTests {
     func assertThat(_ sut: FeedViewController, isRendering feed: [FeedImage], file: StaticString = #file, line: UInt = #line) {
+        // TableView.reloadData does not get
+        // executed immediately due to performance
+        // reasons. So to make the tableView reload
+        // forcefully, layoutIfNeeded method is
+        // called and RunLoop is run.
+
+        sut.tableView.layoutIfNeeded()
+        RunLoop.main.run(until: Date())
+
         guard sut.numberOfRenderedFeedImageViews() == feed.count else {
             return XCTFail("Expected \(feed.count) images , got \(sut.numberOfRenderedFeedImageViews()) instead", file: file, line: line)
         }
