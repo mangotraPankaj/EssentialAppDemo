@@ -5,6 +5,7 @@
 //  Created by Pankaj Mangotra on 10/11/21.
 //
 
+import Combine
 import EDNLearnMac
 import Foundation
 
@@ -20,16 +21,6 @@ final class MainQueueDispatchDecorator<T> {
             return DispatchQueue.main.async(execute: completion)
         }
         completion()
-    }
-}
-
-extension MainQueueDispatchDecorator: FeedLoader where T == FeedLoader {
-    func load(completion: @escaping (FeedLoader.Result) -> Void) {
-        decoratee.load { [weak self] result in
-            self?.dispatch {
-                completion(result)
-            }
-        }
     }
 }
 
