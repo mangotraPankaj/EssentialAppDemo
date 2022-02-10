@@ -88,14 +88,16 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
 
         let item1 = makeItem(
             id: UUID(),
-            imageURL: URL(string: "http://a-url.com")!
+            message: "a message",
+            createdAt: (Date(timeIntervalSince1970: 1598754333), "2020-08-30T02:25:33+00:00"),
+            username: "a username"
         )
 
         let item2 = makeItem(
             id: UUID(),
-            description: "a description",
-            location: "a location",
-            imageURL: URL(string: "http://another-url.com")!
+            message: "a description",
+            createdAt: (Date(timeIntervalSince1970: 1598754322), "2020-08-30T02:25:22+00:00"),
+            username: "another username"
         )
 
         let items = [item1.model, item2.model]
@@ -141,18 +143,19 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
     }
 
     private func makeItem(id: UUID,
-                          description: String? = nil,
-                          location: String? = nil,
-                          imageURL: URL) -> (model: FeedImage, json: [String: Any])
+                          message: String,
+                          createdAt: (date: Date, iso8601String: String),
+                          username: String) -> (model: ImageComment, json: [String: Any])
     {
-        let item = FeedImage(id: id,
-                             description: description,
-                             location: location,
-                             url: imageURL)
-        let json = ["id": id.uuidString,
-                    "description": description,
-                    "location": location,
-                    "image": imageURL.absoluteString].compactMapValues { $0 }
+        let item = ImageComment(id:id, message: message, createAt: createdAt.date, username: username)
+        let json: [String: Any] =
+        ["id": id.uuidString,
+         "message": message,
+         "created_at": createdAt.iso8601String,
+         "author": [
+            "username": username
+         ]
+        ]
 
         return (item, json)
     }
