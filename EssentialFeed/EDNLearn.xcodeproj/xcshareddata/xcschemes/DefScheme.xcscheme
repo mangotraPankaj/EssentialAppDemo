@@ -40,7 +40,16 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "CacheFeedImageDataUseCaseTests">
+               </Test>
+               <Test
                   Identifier = "CacheFeedUseCaseTests">
+               </Test>
+               <Test
+                  Identifier = "CoreDataFeedImageDataStoreTests">
+               </Test>
+               <Test
+                  Identifier = "CoreDataFeedStoreTests">
                </Test>
                <Test
                   Identifier = "EDNLearnMacTests">
@@ -64,7 +73,13 @@
                   Identifier = "LoadFeedImageDataFromRemoteUseCaseTests">
                </Test>
                <Test
+                  Identifier = "LocalFeedImageDataFromCacheUseCaseTests">
+               </Test>
+               <Test
                   Identifier = "URLSessionHTTPClientTests">
+               </Test>
+               <Test
+                  Identifier = "ValidateFeedCacheUseCaseTests">
                </Test>
             </SkippedTests>
          </TestableReference>
