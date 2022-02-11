@@ -414,6 +414,7 @@
 				CD39083127B643C900450E15 /* Shared API */,
 				CD39083227B643E200450E15 /* Shared API Infra */,
 				CD39082D27B4EDB600450E15 /* Image Comments Feature */,
+				CD39083727B6450F00450E15 /* Image Comments API */,
 				CDEC40F426A007A200C745F8 /* Feed Cache */,
 				CD4CC90526788C540093103C /* Unused iOS code */,
 				CD163F65266F7AFD00835B83 /* Feed API */,
@@ -439,6 +440,7 @@
 				CD39083327B6441300450E15 /* Shared API */,
 				CD39083527B6442C00450E15 /* Shared API Infra */,
 				CD4CC90426788C040093103C /* Feed API */,
+				CD39083827B6454200450E15 /* Image Comments API */,
 				CDE922112744DD67008E3C45 /* Feed Presentation */,
 				CD1FF61F26806A50008FCA6B /* Helpers */,
 				CDF09E4A26982E1D00F8E8D8 /* Feed Cache */,
@@ -466,8 +468,6 @@
 				CD010554275DF2A000BA60D4 /* Helpers */,
 				CD163F66266F7B4000835B83 /* RemoteFeedLoader.swift */,
 				CD4CC8F226787ADE0093103C /* FeedItemMapper.swift */,
-				CD39082727B4E6F000450E15 /* RemoteImageCommentsLoader.swift */,
-				CD39082A27B4E82700450E15 /* ImageCommentsMapper.swift */,
 				CD1E4AEF26A6A82500762BB0 /* RemoteFeedItem.swift */,
 				CD010552275909B300BA60D4 /* RemoteFeedImageDataLoader.swift */,
 			);
@@ -547,11 +547,27 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CD39083727B6450F00450E15 /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				CD39082727B4E6F000450E15 /* RemoteImageCommentsLoader.swift */,
+				CD39082A27B4E82700450E15 /* ImageCommentsMapper.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
+		CD39083827B6454200450E15 /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				CD39082527B4E40F00450E15 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
 		CD4CC90426788C040093103C /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
 				CD163F5B266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift */,
-				CD39082527B4E40F00450E15 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
 				CD01054A2754B25B00BA60D4 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
 			);
 			path = "Feed API";
