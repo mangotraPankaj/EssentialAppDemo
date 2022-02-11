@@ -5,11 +5,10 @@
 //  Created by Pankaj Mangotra on 10/02/22.
 //
 
-import XCTest
 import EDNLearnMac
+import XCTest
 
 class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
-
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
 
@@ -49,7 +48,7 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
         // Arrange
         let (sut, client) = makeSUT()
 
-        let samples = [199,150, 300, 400, 500]
+        let samples = [199, 150, 300, 400, 500]
 
         samples.enumerated().forEach { index, code in
             let json = makeItemsJSON([])
@@ -62,8 +61,8 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
     func test_load_deliverErrorON2xxReponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
 
-        let samples = [200,201, 250, 280, 299]
-        samples.enumerated().forEach {index, code in
+        let samples = [200, 201, 250, 280, 299]
+        samples.enumerated().forEach { index, code in
             expect(sut, toCompleteWithResult: failure(.invalidData), when: {
                 let invalidJSON = Data("invalid json".utf8)
                 client.complete(withStatusCode: code, data: invalidJSON, at: index)
@@ -73,9 +72,9 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
 
     func test_load_deliverNoItemsOn2xxHTTPResponseWithEmptyJSONList() {
         let (sut, client) = makeSUT()
-        let samples = [200,201, 250, 280, 299]
-        
-        samples.enumerated().forEach{index, code in
+        let samples = [200, 201, 250, 280, 299]
+
+        samples.enumerated().forEach { index, code in
             expect(sut, toCompleteWithResult: .success([]), when: {
                 let emptyListJSON = makeItemsJSON([])
                 client.complete(withStatusCode: code, data: emptyListJSON, at: index)
@@ -89,24 +88,24 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
         let item1 = makeItem(
             id: UUID(),
             message: "a message",
-            createdAt: (Date(timeIntervalSince1970: 1598754333), "2020-08-30T02:25:33+00:00"),
+            createdAt: (Date(timeIntervalSince1970: 1_598_754_333), "2020-08-30T02:25:33+00:00"),
             username: "a username"
         )
 
         let item2 = makeItem(
             id: UUID(),
             message: "a description",
-            createdAt: (Date(timeIntervalSince1970: 1598754322), "2020-08-30T02:25:22+00:00"),
+            createdAt: (Date(timeIntervalSince1970: 1_598_754_322), "2020-08-30T02:25:22+00:00"),
             username: "another username"
         )
 
         let items = [item1.model, item2.model]
-        let samples = [200,201, 250, 280, 299]
-        
-        samples.enumerated().forEach{index, code in
+        let samples = [200, 201, 250, 280, 299]
+
+        samples.enumerated().forEach { index, code in
             expect(sut, toCompleteWithResult: .success(items), when: {
                 let json = makeItemsJSON([item1.json, item2.json])
-                client.complete(withStatusCode: code , data: json, at: index)
+                client.complete(withStatusCode: code, data: json, at: index)
             })
         }
     }
@@ -147,15 +146,14 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
                           createdAt: (date: Date, iso8601String: String),
                           username: String) -> (model: ImageComment, json: [String: Any])
     {
-        let item = ImageComment(id:id, message: message, createAt: createdAt.date, username: username)
+        let item = ImageComment(id: id, message: message, createAt: createdAt.date, username: username)
         let json: [String: Any] =
-        ["id": id.uuidString,
-         "message": message,
-         "created_at": createdAt.iso8601String,
-         "author": [
-            "username": username
-         ]
-        ]
+            ["id": id.uuidString,
+             "message": message,
+             "created_at": createdAt.iso8601String,
+             "author": [
+                 "username": username,
+             ]]
 
         return (item, json)
     }
@@ -191,5 +189,4 @@ class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
         action()
         wait(for: [exp], timeout: 1.0)
     }
-
 }

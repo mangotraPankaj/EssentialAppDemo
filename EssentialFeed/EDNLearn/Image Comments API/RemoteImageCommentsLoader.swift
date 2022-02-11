@@ -17,7 +17,7 @@ public final class RemoteImageCommentsLoader {
     }
 
     public typealias Result = Swift.Result<[ImageComment], Swift.Error>
-    
+
     public init(url: URL, client: HTTPClient) {
         self.client = client
         self.url = url
@@ -44,5 +44,3 @@ public final class RemoteImageCommentsLoader {
         }
     }
 }
-
-

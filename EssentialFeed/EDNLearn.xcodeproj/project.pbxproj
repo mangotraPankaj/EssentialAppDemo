@@ -45,8 +45,6 @@
 		CD163F5C266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F5B266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift */; };
 		CD163F67266F7B4000835B83 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F66266F7B4000835B83 /* RemoteFeedLoader.swift */; };
 		CD163F68266F7B4000835B83 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F66266F7B4000835B83 /* RemoteFeedLoader.swift */; };
-		CD1E4AF026A6A82500762BB0 /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E4AEF26A6A82500762BB0 /* RemoteFeedItem.swift */; };
-		CD1E4AF126A6A86800762BB0 /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E4AEF26A6A82500762BB0 /* RemoteFeedItem.swift */; };
 		CD1E4AF326A6A8CD00762BB0 /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E4AF226A6A8CD00762BB0 /* LocalFeedImage.swift */; };
 		CD1E4AF426A6A8CD00762BB0 /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E4AF226A6A8CD00762BB0 /* LocalFeedImage.swift */; };
 		CD1FF5EB267C92D4008FCA6B /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF5EA267C92D4008FCA6B /* URLSessionHTTPClientTests.swift */; };
@@ -220,7 +218,6 @@
 		CD163F55266DF3BB00835B83 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		CD163F5B266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		CD163F66266F7B4000835B83 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
-		CD1E4AEF26A6A82500762BB0 /* RemoteFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedItem.swift; sourceTree = "<group>"; };
 		CD1E4AF226A6A8CD00762BB0 /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		CD1FF5EA267C92D4008FCA6B /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracker.swift"; sourceTree = "<group>"; };
@@ -468,7 +465,6 @@
 				CD010554275DF2A000BA60D4 /* Helpers */,
 				CD163F66266F7B4000835B83 /* RemoteFeedLoader.swift */,
 				CD4CC8F226787ADE0093103C /* FeedItemMapper.swift */,
-				CD1E4AEF26A6A82500762BB0 /* RemoteFeedItem.swift */,
 				CD010552275909B300BA60D4 /* RemoteFeedImageDataLoader.swift */,
 			);
 			path = "Feed API";
@@ -815,6 +811,7 @@
 				CD10FC9E266C90CB00A84E66 /* Sources */,
 				CD10FC9F266C90CB00A84E66 /* Frameworks */,
 				CD10FCA0266C90CB00A84E66 /* Resources */,
+				CD39083927B648E700450E15 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1020,6 +1017,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CD39083927B648E700450E15 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
+		};
 		CD734266279E808C0012DE5D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1066,7 +1080,6 @@
 				CD39082B27B4E82700450E15 /* ImageCommentsMapper.swift in Sources */,
 				CD8A7515278D6CD300AE2529 /* FeedImageDataCache.swift in Sources */,
 				CDEC40F926A0096600C745F8 /* FeedStore.swift in Sources */,
-				CD1E4AF026A6A82500762BB0 /* RemoteFeedItem.swift in Sources */,
 				CD0FCF3526D6218F00398364 /* ManagedFeedImage.swift in Sources */,
 				CD0105482754B12200BA60D4 /* FeedImageDataLoader.swift in Sources */,
 				CD0FCF2B26D4AB3800398364 /* CoreDataFeedStore.swift in Sources */,
@@ -1103,7 +1116,6 @@
 				CD0FCF2C26D4AB3800398364 /* CoreDataFeedStore.swift in Sources */,
 				CD4CC8F426787ADE0093103C /* FeedItemMapper.swift in Sources */,
 				CD8BBC632750C9D1005993EE /* FeedImageViewModel.swift in Sources */,
-				CD1E4AF126A6A86800762BB0 /* RemoteFeedItem.swift in Sources */,
 				CD39082927B4E7AA00450E15 /* RemoteImageCommentsLoader.swift in Sources */,
 				CD010553275909B400BA60D4 /* RemoteFeedImageDataLoader.swift in Sources */,
 				CD6AA02326C0FB5C00CB33DC /* FeedCachePolicy.swift in Sources */,
