@@ -70,9 +70,9 @@ class FeedItemsMapperTests: XCTestCase {
             return (sut, client)
         }
      */
-    private func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
-        return .failure(error)
-    }
+//    private func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
+//        return .failure(error)
+//    }
 
     private func makeItem(id: UUID,
                           description: String? = nil,
