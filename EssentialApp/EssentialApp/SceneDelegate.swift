@@ -75,3 +75,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 extension RemoteLoader: FeedLoader where Resource == [FeedImage] {}
+
+public typealias RemoteImageCommentsLoader = RemoteLoader<[ImageComment]>
+
+//Commenting the below code as it is not needed now. Will need once UI is ready
+
+//public extension RemoteImageCommentsLoader {
+//    convenience init(url: URL, client: HTTPClient) {
+//        self.init(url: url, client: client, mapper: ImageCommentsMapper.map)
+//    }
+//}
+
+public typealias RemoteFeedLoader = RemoteLoader<[FeedImage]>
+
+public extension RemoteFeedLoader {
+    convenience init(url: URL, client: HTTPClient) {
+        self.init(url: url, client: client, mapper: FeedItemMapper.map)
+    }
+}
