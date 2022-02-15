@@ -91,11 +91,6 @@ class FeedItemsMapperTests: XCTestCase {
         return (item, json)
     }
 
-    private func makeItemsJSON(_ items: [[String: Any]]) -> Data {
-        let json = ["items": items]
-        return try! JSONSerialization.data(withJSONObject: json)
-    }
-
     // Creating a helper class to load the errors and do an assertion
 
     /*
@@ -126,10 +121,4 @@ class FeedItemsMapperTests: XCTestCase {
          wait(for: [exp], timeout: 1.0)
      }
       */
-}
-
-private extension HTTPURLResponse {
-    convenience init(statusCode: Int) {
-        self.init(url: anyURL(), statusCode: statusCode, httpVersion: nil, headerFields: nil)!
-    }
 }
