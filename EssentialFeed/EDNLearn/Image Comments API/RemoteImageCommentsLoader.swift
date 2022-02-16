@@ -7,6 +7,6 @@
 
 import Foundation
 
-//The composition has moved to composition
-//root in scenedelegate. Not deleting this
-//file just as a reminder
+// The composition has moved to composition
+// root in scenedelegate. Not deleting this
+// file just as a reminder

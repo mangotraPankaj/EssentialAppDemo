@@ -49,15 +49,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         localFeedLoader.validateCache { _ in }
     }
 
-    private func makeRemoteFeedLoaderWithLocalFallback() -> RemoteFeedLoader.Publisher {
+    private func makeRemoteFeedLoaderWithLocalFallback() -> FeedLoader.Publisher {
         let remoteURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5db4155a4fbade21d17ecd28/1572083034355/essential_app_feed.json")!
 
-        let remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: httpClient)
-
-        return remoteFeedLoader
-            .loadPublisher()
+        return httpClient
+            .getPublisher(url: remoteURL)
+            .tryMap(FeedItemMapper.map)
             .caching(to: localFeedLoader)
             .fallback(to: localFeedLoader.loadPublisher)
+
+        /* Above way is the way of Composing the use cases with infrastructure in a functional way. Dont inject dependencies but compose them with map, tryMap,flatMap etc.
+
+                  -[side effect]-
+                  -pure function -
+                  -[side effect]-
+
+                 /// the below code can be used if we dont want to have combine.
+                 /// Create the remote FeedLoader with the mapper and compose it
+         //        let remoteFeedLoader = RemoteLoader(url: remoteURL, client: httpClient, mapper: FeedItemMapper.map)
+         //
+         //        return remoteFeedLoader
+         //            .loadPublisher()
+         //            .caching(to: localFeedLoader)
+         //            .fallback(to: localFeedLoader.loadPublisher)
+                  */
     }
 
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> FeedImageDataLoader.Publisher {
@@ -78,13 +93,13 @@ extension RemoteLoader: FeedLoader where Resource == [FeedImage] {}
 
 public typealias RemoteImageCommentsLoader = RemoteLoader<[ImageComment]>
 
-//Commenting the below code as it is not needed now. Will need once UI is ready
+// Commenting the below code as it is not needed now. Will need once UI is ready
 
-//public extension RemoteImageCommentsLoader {
+// public extension RemoteImageCommentsLoader {
 //    convenience init(url: URL, client: HTTPClient) {
 //        self.init(url: url, client: client, mapper: ImageCommentsMapper.map)
 //    }
-//}
+// }
 
 public typealias RemoteFeedLoader = RemoteLoader<[FeedImage]>
 
