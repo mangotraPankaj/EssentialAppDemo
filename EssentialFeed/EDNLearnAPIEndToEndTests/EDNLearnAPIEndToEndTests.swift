@@ -66,21 +66,36 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
         return recievedResult
     }
 
-    private func getFeedResult(file: StaticString = #filePath,
-                               line: UInt = #line) -> FeedLoader.Result?
+    private func getFeedResult(file _: StaticString = #filePath,
+                               line _: UInt = #line) -> FeedLoader.Result?
     {
         let testServerURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5c52cdd0b8a045df091d2fff/1548930512083/feed-case-study-test-api-feed.json")!
-        let loader = RemoteLoader(url: testServerURL, client: ephemeralClient(), mapper: FeedItemMapper.map)
-        trackForMemoryLeaks(loader, file: file, line: line)
+
+        let client = ephemeralClient()
+        // NOT needed -  let loader = RemoteLoader(url: testServerURL, client: ephemeralClient(), mapper: FeedItemMapper.map)
+        // trackForMemoryLeaks(loader, file: file, line: line)
 
         let exp = expectation(description: "Wait for the load to complete")
         var recievedResult: FeedLoader.Result?
-        loader.load { result in
-            recievedResult = result
+
+        client.get(from: testServerURL) { result in
+            recievedResult = result.flatMap { data, response in
+                do {
+                    return .success(try FeedItemMapper.map(data, from: response))
+                } catch {
+                    return .failure(error)
+                }
+            }
             exp.fulfill()
         }
         wait(for: [exp], timeout: 5.0)
         return recievedResult
+//        loader.load { result in
+//            recievedResult = result
+//            exp.fulfill()
+//        }
+//        wait(for: [exp], timeout: 5.0)
+//        return recievedResult
     }
 
     private func ephemeralClient(file: StaticString = #filePath,
