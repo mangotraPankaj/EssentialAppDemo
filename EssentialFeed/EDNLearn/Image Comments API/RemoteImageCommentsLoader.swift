@@ -1,8 +1,8 @@
 //
-//  RemoteFeedLoader.swift
+//  RemoteImageCommentsLoader.swift
 //  EDNLearn
 //
-//  Created by Pankaj Mangotra on 08/06/21.
+//  Created by Pankaj Mangotra on 10/02/22.
 //
 
 import Foundation
