@@ -1,25 +1,13 @@
 //
-//  FeedPresenter.swift
+//  LoadResourcePresenter.swift
 //  EDNLearn
 //
-//  Created by Pankaj Mangotra on 25/11/21.
+//  Created by Pankaj Mangotra on 22/02/22.
 //
 
 import Foundation
 
-public protocol FeedView {
-    func display(_ viewModel: FeedViewModel)
-}
-
-public protocol FeedLoadingView {
-    func display(_ viewModel: FeedLoadingViewModel)
-}
-
-public protocol FeedErrorView {
-    func display(_ viewModel: FeedErrorViewModel)
-}
-
-public final class FeedPresenter {
+public final class LoadResourcePresenter {
     private let errorView: FeedErrorView
     private let loadingView: FeedLoadingView
     private let feedView: FeedView
