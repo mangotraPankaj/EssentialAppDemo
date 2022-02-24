@@ -17,7 +17,7 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
 
     private var loadingControllers = [IndexPath: FeedImageCellController]()
 
-    public func display(_ viewModel: FeedErrorViewModel) {
+    public func display(_ viewModel: ResourceErrorViewModel) {
         if let message = viewModel.message {
             errorView?.show(message: message)
         } else {
