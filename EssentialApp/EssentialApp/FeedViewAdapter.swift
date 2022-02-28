@@ -20,10 +20,43 @@ final class FeedViewAdapter: ResourceView {
 
     func display(_ viewModel: FeedViewModel) {
         controller?.display(viewModel.feed.map { model in
-            let adapter = FeedImageDataLoaderPresentationAdapater<WeakRefVirtualProxy<FeedImageCellController>, UIImage>(model: model, imageLoader: imageLoader)
-            let view = FeedImageCellController(delegate: adapter)
-            adapter.presenter = FeedImagePresenter(view: WeakRefVirtualProxy(view), imageTransformer: UIImage.init)
+            /// the below code is written to convert imageLoader which takes
+            /// one parameter and LoadResourcePresentationAdapter loader
+            /// which does not take any parameter.We are adapting
+            /// imageLoader method of
+            /// FeedImageDataLoaderPresentationAdapater that takes one
+            /// parameter to a method that takes no parameters. This is
+            /// known as partial application of functions .
+
+            let adapter = LoadResourcePresentationAdapter<Data,
+                WeakRefVirtualProxy<FeedImageCellController>>(loader: { [imageLoader] in
+                imageLoader(model.url)
+            })
+
+//            let adapter = FeedImageDataLoaderPresentationAdapater<WeakRefVirtualProxy<FeedImageCellController>, UIImage>(model: model, imageLoader: imageLoader)
+
+            /// Parameters that dont change can be passed at intialization time whereas the params which dynamically change are passed by property injection or method injection.
+            let view = FeedImageCellController(
+                viewModel: FeedImagePresenter<FeedImageCellController, UIImage>.map(model),
+                delegate: adapter
+            )
+
+            // adapter.presenter = FeedImagePresenter(view: WeakRefVirtualProxy(view), imageTransformer: UIImage.init)
+            adapter.presenter = LoadResourcePresenter(
+                resourceView: WeakRefVirtualProxy(view),
+                loadingView: WeakRefVirtualProxy(view),
+                errorView: WeakRefVirtualProxy(view),
+                mapper: { data in
+                    guard let image = UIImage(data: data) else {
+                        throw InvalidImageData()
+                    }
+                    return image
+                }
+            )
+
             return view
         })
     }
 }
+
+private struct InvalidImageData: Error {}
