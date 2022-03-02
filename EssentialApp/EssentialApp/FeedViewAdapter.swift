@@ -37,7 +37,7 @@ final class FeedViewAdapter: ResourceView {
 
             /// Parameters that dont change can be passed at intialization time whereas the params which dynamically change are passed by property injection or method injection.
             let view = FeedImageCellController(
-                viewModel: FeedImagePresenter<FeedImageCellController, UIImage>.map(model),
+                viewModel: FeedImagePresenter.map(model),
                 delegate: adapter
             )
 
