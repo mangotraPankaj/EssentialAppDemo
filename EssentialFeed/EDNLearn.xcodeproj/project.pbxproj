@@ -657,8 +657,7 @@
 		CD56B65727D88C3B00F6DF75 /* Shared UI */ = {
 			isa = PBXGroup;
 			children = (
-				CD56B65927D88C5F00F6DF75 /* Helpers */,
-				CD2343DA2743977B00B8CADE /* ErrorView.swift */,
+				CD56B65C27D88F8E00F6DF75 /* Views */,
 				CD56B65827D88C4100F6DF75 /* Controllers */,
 			);
 			path = "Shared UI";
@@ -680,6 +679,15 @@
 				CD56B65A27D88E7100F6DF75 /* UIRefreshControl.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD56B65C27D88F8E00F6DF75 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD2343DA2743977B00B8CADE /* ErrorView.swift */,
+				CD56B65927D88C5F00F6DF75 /* Helpers */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CD58429327C4BC36003137E7 /* Shared Presentation */ = {
