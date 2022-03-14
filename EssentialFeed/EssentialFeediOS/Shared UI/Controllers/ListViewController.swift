@@ -8,8 +8,6 @@
 import EDNLearnMac
 import UIKit
 
-public typealias CellController = UITableViewDataSource & UITableViewDelegate & UITableViewDataSourcePrefetching
-
 /// cell controller is made from custom protocol to using UIKit tableview protocol to remove the dependency for imageCommentCellController and FeedImageCellcontroller on shared UI List controller.
 // public protocol CellController {
 //    func view(in tableView: UITableView) -> UITableViewCell
@@ -74,27 +72,27 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
 
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // return cellController(forRowAt: indexPath).view(in: tableView)
-        let controller = cellController(forRowAt: indexPath)
-        return controller.tableView(tableView, cellForRowAt: indexPath)
+        let dataSource = cellController(forRowAt: indexPath).dataSource
+        return dataSource.tableView(tableView, cellForRowAt: indexPath)
     }
 
     override public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let controller = removeLoadingController(forRowAt: indexPath)
-        controller?.tableView?(tableView, didEndDisplaying: cell, forRowAt: indexPath)
+        let dl = removeLoadingController(forRowAt: indexPath)?.delegate
+        dl?.tableView?(tableView, didEndDisplaying: cell, forRowAt: indexPath)
     }
 
     public func tableView(_: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { indexPath in
-            let controller = cellController(forRowAt: indexPath)
-            return controller.tableView(tableView, prefetchRowsAt: [indexPath])
+            let dsp = cellController(forRowAt: indexPath).dataSourcePreFetching
+            dsp?.tableView(tableView, prefetchRowsAt: [indexPath])
             // cellController(forRowAt: indexPath).preload()
         }
     }
 
     public func tableView(_: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { indexPath in
-            let controller = removeLoadingController(forRowAt: indexPath)
-            controller?.tableView?(tableView, cancelPrefetchingForRowsAt: [indexPath])
+            let dsp = removeLoadingController(forRowAt: indexPath)?.dataSourcePreFetching
+            dsp?.tableView?(tableView, cancelPrefetchingForRowsAt: [indexPath])
         }
     }
 
