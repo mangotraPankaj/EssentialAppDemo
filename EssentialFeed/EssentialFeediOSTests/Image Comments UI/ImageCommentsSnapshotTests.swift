@@ -3,7 +3,7 @@ import EssentialFeediOS
 import XCTest
 
 final class ImageCommentsSnapshotTests: XCTestCase {
-    func test_feedWithContent() {
+    func test_ListWithContent() {
         let sut = makeSUT()
         sut.display(comments())
 
