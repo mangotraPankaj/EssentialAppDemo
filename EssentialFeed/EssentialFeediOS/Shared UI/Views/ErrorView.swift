@@ -8,9 +8,45 @@
 import UIKit
 
 public final class ErrorView: UIView {
-    @IBOutlet public private(set) var errorLabel: UILabel!
+    private lazy var errorLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 17)
+        return label
+    }()
 
-    public var message: String? { return isVisible ? errorLabel.text : nil }
+    public var message: String? {
+        get { return isVisible ? errorLabel.text : nil }
+        set { setMessageAnimated(newValue) }
+    }
+
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    private func configure() {
+        backgroundColor = .errorBackgroundColor
+        configureLabel()
+        hideMessageAnimated()
+    }
+
+    private func configureLabel() {
+        addSubview(errorLabel)
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            trailingAnchor.constraint(equalTo: errorLabel.trailingAnchor, constant: 8),
+            errorLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            bottomAnchor.constraint(equalTo: errorLabel.bottomAnchor, constant: 8),
+        ])
+    }
 
     private var isVisible: Bool {
         return alpha > 0
@@ -19,12 +55,18 @@ public final class ErrorView: UIView {
     override public func awakeFromNib() {
         super.awakeFromNib()
 
-        errorLabel.text = nil
-
-        alpha = 0
+        hideMessageAnimated()
     }
 
-    func show(message: String) {
+    private func setMessageAnimated(_ message: String?) {
+        if let message = message {
+            show(message)
+        } else {
+            hideMessage()
+        }
+    }
+
+    private func show(_ message: String) {
         errorLabel.text = message
         // button.setTitle(message, for: .normal)
 
@@ -43,5 +85,17 @@ public final class ErrorView: UIView {
                 }
             }
         )
+    }
+
+    private func hideMessageAnimated() {
+        errorLabel.text = nil
+
+        alpha = 0
+    }
+}
+
+extension UIColor {
+    static var errorBackgroundColor: UIColor {
+        UIColor(red: 0.9951, green: 0.4176, blue: 0.4154, alpha: 1)
     }
 }

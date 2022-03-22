@@ -21,7 +21,7 @@ import UIKit
 // }
 
 public final class ListViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
-    @IBOutlet public private(set) var errorView: ErrorView?
+    public private(set) var errorView = ErrorView()
 
     private var loadingControllers = [IndexPath: CellController]()
 
@@ -37,7 +37,25 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+
+        configureErrorView()
         refresh()
+    }
+
+    private func configureErrorView() {
+        let container = UIView()
+        container.backgroundColor = .clear
+        container.addSubview(errorView)
+
+        errorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            errorView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            container.trailingAnchor.constraint(equalTo: errorView.trailingAnchor),
+            errorView.topAnchor.constraint(equalTo: container.topAnchor),
+            container.bottomAnchor.constraint(equalTo: errorView.bottomAnchor),
+        ])
+
+        tableView.tableHeaderView = container
     }
 
     override public func viewDidLayoutSubviews() {
@@ -58,12 +76,9 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
         refreshControl?.update(isRefreshing: viewModel.isLoading)
     }
 
-    public func display(_ viewModel: ResourceErrorViewModel) {
-        if let message = viewModel.message {
-            errorView?.show(message: message)
-        } else {
-            errorView?.hideMessage()
-        }
+    public func display(_: ResourceErrorViewModel) {
+        // errorView?.show("Errro")
+        errorView.message = "Error" // viewModel.message
     }
 
     override public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
