@@ -56,6 +56,12 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
         ])
 
         tableView.tableHeaderView = container
+
+        errorView.onHide = { [weak self] in
+            self?.tableView.beginUpdates()
+            self?.tableView.sizeTableHeaderToFit()
+            self?.tableView.endUpdates()
+        }
     }
 
     override public func viewDidLayoutSubviews() {
@@ -76,9 +82,9 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
         refreshControl?.update(isRefreshing: viewModel.isLoading)
     }
 
-    public func display(_: ResourceErrorViewModel) {
+    public func display(_ viewModel: ResourceErrorViewModel) {
         // errorView?.show("Errro")
-        errorView.message = "Error" // viewModel.message
+        errorView.message = viewModel.message
     }
 
     override public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {

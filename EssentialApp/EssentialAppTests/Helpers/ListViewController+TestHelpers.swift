@@ -71,11 +71,11 @@ extension ListViewController {
         ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
     }
 
-    var errorView: ErrorView? {
-        tableView.tableHeaderView as? ErrorView
+    func simulateErrorViewTap() {
+        errorView.simulateTap()
     }
 
     var errorMessage: String? {
-        errorView?.message
+        errorView.message
     }
 }
