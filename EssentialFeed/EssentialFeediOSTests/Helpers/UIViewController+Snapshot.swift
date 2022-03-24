@@ -20,7 +20,7 @@ struct SnapshotConfiguration {
     let layoutMargins: UIEdgeInsets
     let traitCollection: UITraitCollection
 
-    static func iPhone13(style: UIUserInterfaceStyle) -> SnapshotConfiguration {
+    static func iPhone13(style: UIUserInterfaceStyle,contentSize: UIContentSizeCategory = .medium) -> SnapshotConfiguration {
         return SnapshotConfiguration(
             size: CGSize(width: 390, height: 844),
             safeAreaInsets: UIEdgeInsets(top: 47, left: 0, bottom: 34, right: 0),
