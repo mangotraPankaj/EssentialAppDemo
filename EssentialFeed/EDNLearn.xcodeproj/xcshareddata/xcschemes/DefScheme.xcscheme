@@ -55,19 +55,10 @@
                   Identifier = "EDNLearnMacTests">
                </Test>
                <Test
-                  Identifier = "FeedImagePresenterTests">
-               </Test>
-               <Test
                   Identifier = "FeedLocalizationTests">
                </Test>
                <Test
-                  Identifier = "FeedPresenterTests">
-               </Test>
-               <Test
                   Identifier = "LoadFeedFromCacheUseCaseTests">
-               </Test>
-               <Test
-                  Identifier = "LoadFeedFromRemoteUseCaseTests">
                </Test>
                <Test
                   Identifier = "LoadFeedImageDataFromRemoteUseCaseTests">
