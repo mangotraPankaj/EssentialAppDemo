@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD00468C280FE7F000363F80 /* UIView+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00468B280FE7F000363F80 /* UIView+Container.swift */; };
 		CD0105482754B12200BA60D4 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD559715270AD5A500E9506E /* FeedImageDataLoader.swift */; };
 		CD0105492754B12200BA60D4 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD559715270AD5A500E9506E /* FeedImageDataLoader.swift */; };
 		CD01054B2754B25B00BA60D4 /* LoadFeedImageDataFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01054A2754B25B00BA60D4 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */; };
@@ -233,6 +234,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD00468B280FE7F000363F80 /* UIView+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Container.swift"; sourceTree = "<group>"; };
 		CD01054A2754B25B00BA60D4 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedImageDataFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		CD01054D2758A1E700BA60D4 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		CD010552275909B300BA60D4 /* RemoteFeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedImageDataLoader.swift; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 				CD8520B827312688005976B9 /* UITableView+Dequeueing.swift */,
 				CD73426B279E8A460012DE5D /* UITableView+HeaderSizing.swift */,
 				CD56B65A27D88E7100F6DF75 /* UIRefreshControl.swift */,
+				CD00468B280FE7F000363F80 /* UIView+Container.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1520,6 +1523,7 @@
 				CDD71A9427DB1F8700AF153A /* ImageCommentCellController.swift in Sources */,
 				CD2343D9274395CE00B8CADE /* Localized.swift in Sources */,
 				CD8520B927312688005976B9 /* UITableView+Dequeueing.swift in Sources */,
+				CD00468C280FE7F000363F80 /* UIView+Container.swift in Sources */,
 				CD286FEC26EF37120070022B /* ListViewController.swift in Sources */,
 				CD8E249B26F1D30600ECF322 /* FeedImageCell.swift in Sources */,
 				CD55971A270AE06F00E9506E /* FeedImageCellController.swift in Sources */,

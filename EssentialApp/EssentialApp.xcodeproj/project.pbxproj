@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E7E239E2C3AC3292148BB8D /* Pods_EssentialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A0592BC4FC1DFD38D18E1F /* Pods_EssentialApp.framework */; };
+		CD004688280FE09900363F80 /* CommentsUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD004687280FE09900363F80 /* CommentsUIIntegrationTests.swift */; };
+		CD00468A280FE3FB00363F80 /* CommentsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD004689280FE3FB00363F80 /* CommentsUIComposer.swift */; };
 		CD120EB527842108006AE564 /* XCTestCase+MemoryTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD120EB427842108006AE564 /* XCTestCase+MemoryTracking.swift */; };
 		CD120EB7278421A9006AE564 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD120EB6278421A9006AE564 /* SharedTestHelpers.swift */; };
 		CD4E95B227799703000632B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4E95B127799703000632B5 /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 /* Begin PBXFileReference section */
 		50A0592BC4FC1DFD38D18E1F /* Pods_EssentialApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EssentialApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		983F931552AD2720B818422C /* Pods-EssentialApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EssentialApp.release.xcconfig"; path = "Target Support Files/Pods-EssentialApp/Pods-EssentialApp.release.xcconfig"; sourceTree = "<group>"; };
+		CD004687280FE09900363F80 /* CommentsUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIIntegrationTests.swift; sourceTree = "<group>"; };
+		CD004689280FE3FB00363F80 /* CommentsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIComposer.swift; sourceTree = "<group>"; };
 		CD120EB427842108006AE564 /* XCTestCase+MemoryTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryTracking.swift"; sourceTree = "<group>"; };
 		CD120EB6278421A9006AE564 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		CD4E95AE27799703000632B5 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +192,7 @@
 				CD4E95B327799703000632B5 /* SceneDelegate.swift */,
 				CDB65BE227ABB20D00A12346 /* CombineHelpers.swift */,
 				CDF5E1C827993F4400F45BAF /* FeedUIComposer.swift */,
+				CD004689280FE3FB00363F80 /* CommentsUIComposer.swift */,
 				CDF5E1CD27993F4400F45BAF /* WeakRefVirtualProxy.swift */,
 				CDF5E1C927993F4400F45BAF /* FeedViewAdapter.swift */,
 				CDF5E1CB27993F4400F45BAF /* LoadResourcePresentationAdapter.swift */,
@@ -206,6 +211,7 @@
 				CDF5E1C62797F02700F45BAF /* SceneDelegateTests.swift */,
 				CDF5E1E6279943F700F45BAF /* FeedAcceptanceTests.swift */,
 				CDF5E1E427993F8900F45BAF /* FeedUIIntegrationTests.swift */,
+				CD004687280FE09900363F80 /* CommentsUIIntegrationTests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				CD4E95B227799703000632B5 /* AppDelegate.swift in Sources */,
 				CDB65BE327ABB20D00A12346 /* CombineHelpers.swift in Sources */,
 				CD4E95B427799703000632B5 /* SceneDelegate.swift in Sources */,
+				CD00468A280FE3FB00363F80 /* CommentsUIComposer.swift in Sources */,
 				CDF5E1CF27993F4400F45BAF /* LoadResourcePresentationAdapter.swift in Sources */,
 				CDF5E1CE27993F4400F45BAF /* FeedViewAdapter.swift in Sources */,
 				CDF5E1D127993F4400F45BAF /* WeakRefVirtualProxy.swift in Sources */,
@@ -406,6 +413,7 @@
 				CD66FA2C278C0EBE004D23AC /* FeedLoaderStub.swift in Sources */,
 				CDF5E1E7279943F700F45BAF /* FeedAcceptanceTests.swift in Sources */,
 				CDF5E1E127993F6900F45BAF /* UIButton+TestHelpers.swift in Sources */,
+				CD004688280FE09900363F80 /* CommentsUIIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

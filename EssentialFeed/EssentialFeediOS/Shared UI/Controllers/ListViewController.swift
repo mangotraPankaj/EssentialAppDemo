@@ -23,38 +23,27 @@ import UIKit
 public final class ListViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
     public private(set) var errorView = ErrorView()
 
-    private var loadingControllers = [IndexPath: CellController]()
+    // private var loadingControllers = [IndexPath: CellController]()
 
     public var onRefresh: (() -> Void)?
 
     private lazy var dataSource: UITableViewDiffableDataSource<Int, CellController> = .init(tableView: tableView) {
-        tableView, index, controller -> UITableViewCell? in
+        tableView, index, controller in
         controller.dataSource.tableView(tableView, cellForRowAt: index)
     }
 
-    private var tasks = [IndexPath: FeedImageDataLoaderTask]()
+    // private var tasks = [IndexPath: FeedImageDataLoaderTask]()
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = dataSource
-        configureErrorView()
+        configureTableView()
         refresh()
     }
 
-    private func configureErrorView() {
-        let container = UIView()
-        container.backgroundColor = .clear
-        container.addSubview(errorView)
-
-        errorView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            errorView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-            container.trailingAnchor.constraint(equalTo: errorView.trailingAnchor),
-            errorView.topAnchor.constraint(equalTo: container.topAnchor),
-            container.bottomAnchor.constraint(equalTo: errorView.bottomAnchor),
-        ])
-
-        tableView.tableHeaderView = container
+    private func configureTableView() {
+        dataSource.defaultRowAnimation = .fade
+        tableView.dataSource = dataSource
+        tableView.tableHeaderView = errorView.makeContainer()
 
         errorView.onHide = { [weak self] in
             self?.tableView.beginUpdates()
