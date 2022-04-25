@@ -147,7 +147,6 @@ final class CommentsUIIntegrationTests: XCTestCase {
     func test_deinit_cancelsRunningRequest() {
         var cancelCallCount = 0
         var sut: ListViewController?
-
         autoreleasepool {
             sut = CommentsUIComposer.commentsComposedWith(commentsLoader: {
                 PassthroughSubject<[ImageComment], Error>().handleEvents(receiveCancel: {
