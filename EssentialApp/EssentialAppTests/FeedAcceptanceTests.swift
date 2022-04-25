@@ -66,6 +66,17 @@ class FeedAcceptanceTests: XCTestCase {
         return nav?.topViewController as! ListViewController
     }
 
+    private func showCommentsForFirstImage() -> ListViewController {
+        let feed = launch(httpClient: .online(response), store: .empty)
+
+        feed.simulateTapOnFeedImage(at: 0)
+        /// Run loop is called to make sure everything is rendered correctly before pushing the nav controller as push controller is animated which takes time to execute.
+        RunLoop.current.run(until: Date())
+
+        let nav = feed.navigationController
+        return nav?.topViewController as! ListViewController
+    }
+
     private func enterBackground(with store: InMemoryFeedStore) {
         let sut = SceneDelegate(httpClient: HTTPClientStub.offline, store: store)
 
@@ -149,11 +160,13 @@ class FeedAcceptanceTests: XCTestCase {
     }
 
     private func makeData(for url: URL) -> Data {
-        switch url.absoluteString {
-        case "http://image.com":
+        switch url.path {
+        case "/image-1", "/image-2":
             return makeImageData()
-        default:
+        case "/essential-feed/v1/feed":
             return makeFeedData()
+        default:
+            return Data()
         }
     }
 
@@ -163,8 +176,8 @@ class FeedAcceptanceTests: XCTestCase {
 
     private func makeFeedData() -> Data {
         return try! JSONSerialization.data(withJSONObject: ["items": [
-            ["id": UUID().uuidString, "image": "http://image.com"],
-            ["id": UUID().uuidString, "image": "http://image.com"],
+            ["id": UUID().uuidString, "image": "http://feed.com/image-1"],
+            ["id": UUID().uuidString, "image": "http://feed.com/image-2"],
         ]])
     }
 }
