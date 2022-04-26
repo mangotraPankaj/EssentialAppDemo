@@ -12,10 +12,12 @@ import UIKit
 final class FeedViewAdapter: ResourceView {
     private weak var controller: ListViewController?
     private let imageLoader: (URL) -> FeedImageDataLoader.Publisher
+    private var selection: (FeedImage) -> Void
 
-    init(controller: ListViewController, imageloader: @escaping (URL) -> FeedImageDataLoader.Publisher) {
+    init(controller: ListViewController, imageloader: @escaping (URL) -> FeedImageDataLoader.Publisher, selection: @escaping (FeedImage) -> Void) {
         self.controller = controller
         imageLoader = imageloader
+        self.selection = selection
     }
 
     func display(_ viewModel: FeedViewModel) {
@@ -38,7 +40,10 @@ final class FeedViewAdapter: ResourceView {
             /// Parameters that dont change can be passed at intialization time whereas the params which dynamically change are passed by property injection or method injection.
             let view = FeedImageCellController(
                 viewModel: FeedImagePresenter.map(model),
-                delegate: adapter
+                delegate: adapter,
+                selection: { [selection] in
+                    selection(model)
+                }
             )
 
             // adapter.presenter = FeedImagePresenter(view: WeakRefVirtualProxy(view), imageTransformer: UIImage.init)
