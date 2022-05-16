@@ -110,6 +110,9 @@
 		CD6907272685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6907262685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift */; };
 		CD6907292685AA9E001E9E4D /* EDNLearnMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */; };
 		CD6907372687675A001E9E4D /* XCTestCase+MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */; };
+		CD69D7F8283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69D7F5283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_dark.png */; };
+		CD69D7F9283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69D7F6283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light.png */; };
+		CD69D7FA283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69D7F7283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png */; };
 		CD6AA02226C0FB2800CB33DC /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */; };
 		CD6AA02326C0FB5C00CB33DC /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */; };
 		CD6B8D9327706678009B9C62 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B8D9127706674009B9C62 /* CoreDataFeedStore+FeedImageDataLoader.swift */; };
@@ -322,6 +325,9 @@
 		CD6907242685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EDNLearnAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6907262685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDNLearnAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		CD6907282685AA9E001E9E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD69D7F5283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_dark.png; sourceTree = "<group>"; };
+		CD69D7F6283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_light.png; sourceTree = "<group>"; };
+		CD69D7F7283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png; sourceTree = "<group>"; };
 		CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 		CD6B8D8F277062D0009B9C62 /* FeedStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FeedStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		CD6B8D9127706674009B9C62 /* CoreDataFeedStore+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
@@ -781,6 +787,9 @@
 		CD56B66427D896B700F6DF75 /* snapshots */ = {
 			isa = PBXGroup;
 			children = (
+				CD69D7F5283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_dark.png */,
+				CD69D7F7283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png */,
+				CD69D7F6283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light.png */,
 				CDF48C7B282E2D35004C2DF6 /* FEED_WITH_LOAD_MORE_INDICATOR_dark_extraExtraExtraLarge.png */,
 				CDF48C7E282E2D35004C2DF6 /* FEED_WITH_LOAD_MORE_INDICATOR_dark.png */,
 				CDF48C7C282E2D35004C2DF6 /* FEED_WITH_LOAD_MORE_INDICATOR_light_extraExtraExtraLarge.png */,
@@ -1303,10 +1312,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDF48C80282E2D35004C2DF6 /* FEED_WITH_LOAD_MORE_INDICATOR_light_extraExtraExtraLarge.png in Resources */,
+				CD69D7F8283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_dark.png in Resources */,
 				CD25280D27F45F1100A1E08B /* FEED_WITH_CONTENT_light_extraExtraExtraLarge.png in Resources */,
 				CD56B67227D896B700F6DF75 /* FEED_WITH_FAILED_IMAGE_LOADING_light.png in Resources */,
 				CD25280B27F45F1100A1E08B /* FEED_WITH_FAILED_IMAGE_LOADING_dark_extraExtraExtraLarge.png in Resources */,
 				CDF48C7F282E2D35004C2DF6 /* FEED_WITH_LOAD_MORE_INDICATOR_dark_extraExtraExtraLarge.png in Resources */,
+				CD69D7F9283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light.png in Resources */,
 				CD25280C27F45F1100A1E08B /* FEED_WITH_CONTENT_dark_extraExtraExtraLarge.png in Resources */,
 				CD56B67427D896B700F6DF75 /* EMPTY_LIST_dark.png in Resources */,
 				CDDBBA0F27EC61C300F0E996 /* LIST_WITH_ERROR_MESSAGE_light_extraExtraExtraLarge.png in Resources */,
@@ -1316,6 +1327,7 @@
 				CD56B66F27D896B700F6DF75 /* FEED_WITH_CONTENT_dark.png in Resources */,
 				CD56B67127D896B700F6DF75 /* FEED_WITH_CONTENT_light.png in Resources */,
 				CDDBBA1127EC625100F0E996 /* IMAGE_COMMENTS_light_extraExtraExtraLarge.png in Resources */,
+				CD69D7FA283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png in Resources */,
 				CD56B67327D896B700F6DF75 /* LIST_WITH_ERROR_MESSAGE_light.png in Resources */,
 				CD56B66E27D896B700F6DF75 /* FEED_WITH_FAILED_IMAGE_LOADING_dark.png in Resources */,
 				CDD71A9D27DB220E00AF153A /* IMAGE_COMMENTS_dark.png in Resources */,
