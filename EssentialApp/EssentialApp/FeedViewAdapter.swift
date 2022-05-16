@@ -20,8 +20,8 @@ final class FeedViewAdapter: ResourceView {
         self.selection = selection
     }
 
-    func display(_ viewModel: FeedViewModel) {
-        controller?.display(viewModel.feed.map { model in
+    func display(_ viewModel: Paginated<FeedImage>) {
+        controller?.display(viewModel.items.map { model in
             /// the below code is written to convert imageLoader which takes
             /// one parameter and LoadResourcePresentationAdapter loader
             /// which does not take any parameter.We are adapting

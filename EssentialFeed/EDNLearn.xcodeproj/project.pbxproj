@@ -113,6 +113,8 @@
 		CD69D7F8283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69D7F5283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_dark.png */; };
 		CD69D7F9283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69D7F6283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light.png */; };
 		CD69D7FA283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = CD69D7F7283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png */; };
+		CD69D7FC28322C800045802F /* Paginated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD69D7FB28322C800045802F /* Paginated.swift */; };
+		CD69D7FD28322EF90045802F /* Paginated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD69D7FB28322C800045802F /* Paginated.swift */; };
 		CD6AA02226C0FB2800CB33DC /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */; };
 		CD6AA02326C0FB5C00CB33DC /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */; };
 		CD6B8D9327706678009B9C62 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6B8D9127706674009B9C62 /* CoreDataFeedStore+FeedImageDataLoader.swift */; };
@@ -328,6 +330,7 @@
 		CD69D7F5283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_dark.png; sourceTree = "<group>"; };
 		CD69D7F6283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_light.png; sourceTree = "<group>"; };
 		CD69D7F7283222520045802F /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png; sourceTree = "<group>"; };
+		CD69D7FB28322C800045802F /* Paginated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paginated.swift; sourceTree = "<group>"; };
 		CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 		CD6B8D8F277062D0009B9C62 /* FeedStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FeedStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		CD6B8D9127706674009B9C62 /* CoreDataFeedStore+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
@@ -613,6 +616,7 @@
 			children = (
 				CDFEFDB7267876F0004BA307 /* HTTPClient.swift */,
 				CD41C28D27BA2C8F004220C7 /* RemoteLoader.swift */,
+				CD69D7FB28322C800045802F /* Paginated.swift */,
 			);
 			path = "Shared API";
 			sourceTree = "<group>";
@@ -1418,6 +1422,7 @@
 				CD163F50266DF38000835B83 /* FeedImage.swift in Sources */,
 				CD6AA02226C0FB2800CB33DC /* FeedCachePolicy.swift in Sources */,
 				CD758DF8274F68A0005026DC /* ResourceLoadingViewModel.swift in Sources */,
+				CD69D7FC28322C800045802F /* Paginated.swift in Sources */,
 				CD6B8D9427706681009B9C62 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */,
 				CD42D43F276722800006A8CC /* FeedImageDataStore.swift in Sources */,
 				CD39082B27B4E82700450E15 /* ImageCommentsMapper.swift in Sources */,
@@ -1468,6 +1473,7 @@
 				CD0FCF2D26D4B3E700398364 /* FeedStore.xcdatamodeld in Sources */,
 				CD163F68266F7B4000835B83 /* RemoteFeedLoader.swift in Sources */,
 				CDE5842727CF523D0059C59D /* ImageCommentsPresenter.swift in Sources */,
+				CD69D7FD28322EF90045802F /* Paginated.swift in Sources */,
 				CD6B8D972771B016009B9C62 /* CoreDataFeedStore+FeedStore.swift in Sources */,
 				CD58429B27C4BED7003137E7 /* LoadResourcePresenter.swift in Sources */,
 				CD758DF6274F6872005026DC /* FeedViewModel.swift in Sources */,
