@@ -25,6 +25,9 @@ public class LoadMoreCellController: NSObject, UITableViewDataSource, UITableVie
     }
 
     public func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt _: IndexPath) {
+        guard !cell.isLoading else {
+            return
+        }
         callback()
     }
 }
